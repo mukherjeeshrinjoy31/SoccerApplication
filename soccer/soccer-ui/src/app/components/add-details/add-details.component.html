@@ -1,0 +1,43 @@
+<div class = "container">
+    <div>
+        <h3>PLEASE REGISTER CLUB/COUNTRY HERE</h3>
+        <a [routerLink] = "''">GO BACK TO REGISTRATION PAGE</a>
+    </div>
+    <form [formGroup] = "countryForm" (ngSubmit) = "submitCountryRegistration()" novalidate>
+        <div *ngIf = "validMessageCountry != ''">
+            <h4>{{validMessageCountry}}</h4>
+        </div>
+        <div class = "form-group">
+            <label>COUNTRY NAME</label>
+            <input type="text" class="form-control" formControlName = "nationName" required/>
+        </div>
+        <div class = "form-group">
+            <label>COUNTRY CODE (LIMIT 3 CHARACTERS)</label>
+            <input type="text" class="form-control" formControlName = "nationCode" required/>
+        </div>
+        <br>
+        <button class = "btn btn-primary">SUBMIT COUNTRY DETAILS</button>
+    </form>
+    <form [formGroup] = "clubForm" (ngSubmit) = "submitClubRegistration()" novalidate>
+        <div *ngIf = "validMessageClub != ''">
+            <h4>{{validMessageClub}}</h4>
+        </div>
+        <div class = "form-group">
+            <label>CLUB NAME</label>
+            <input type="text" class="form-control" formControlName = "clubName" required/>
+        </div>
+        <div class = "form-group">
+            <label>CLUB CODE (LIMIT 3 CHARACTERS)</label>
+            <input type="text" class="form-control" formControlName = "clubCode" required/>
+        </div>
+        <div class = "form-group">
+            <label>CLUB NATIONALITY</label>
+            <select class = "form-control" formControlName = "clubNationName" required>
+                <option value="">SELECT CLUB NATIONALITY</option>
+                <option *ngFor = "let nation of countryList" [value] = "nation">{{nation}}</option>
+            </select>
+        </div>
+        <br>
+        <button class = "btn btn-primary">SUBMIT CLUB DETAILS</button>
+    </form>
+</div>

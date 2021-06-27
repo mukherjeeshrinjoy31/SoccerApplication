@@ -1,0 +1,57 @@
+<div class = "card">
+    <div class = "card-header">
+        <div class = "row">
+            PLAYER STATISTICS
+        </div>
+    </div>
+    <div class = "card-body">
+        <div class = "col-md-2">
+            <div class = "row">
+                <label>FILTER BY :</label>
+                <select [style.color] = "'seagreen'"[(ngModel)] = "filterAttribute">
+                    <option value="">SELECT FILTER ATTRIBUTE</option>
+                    <option *ngFor = "let attribute of filterByAttributes">{{attribute}}</option>
+                </select>
+                <input type="text" [(ngModel)] = "filterText">
+            </div>
+            <div class = "row">
+                <h6>FILTERED BY :</h6>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <div class = "table">
+                <thead>
+                    <tr>
+                        <th>PLAYER NAME</th>
+                        <th>AGE</th>
+                        <th>CLUB</th>
+                        <th>NATIONALITY</th>
+                        <th>POSITION</th>
+                        <th>GOALS</th>
+                        <th>ASSISTS</th>
+                        <th>CLEAN SHEETS</th>
+                        <th>RATING</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let player of filteredPlayerDetailsObject">
+                        <td>
+                            <a class = "btn btn=primary"
+                            [routerLink] = "['/admin/player/',player.playerName]">
+                                {{player.playerName}}
+                            </a>
+                        </td>
+                        <td>{{player.playerAge}}</td>
+                        <td>{{player.playerClub}}</td>
+                        <td>{{player.playerNationality}}</td>
+                        <td>{{player.playerPosition}}</td>
+                        <td>{{player.playerGoals}}</td>
+                        <td>{{player.playerAssists}}</td>
+                        <td>{{player.playerCleanSheets}}</td>
+                        <td><app-star [rating] = "player.playerStarRating"></app-star></td>
+                    </tr>
+                </tbody>
+            </div>
+        </div>
+    </div>
+</div>

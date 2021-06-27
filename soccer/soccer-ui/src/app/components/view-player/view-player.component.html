@@ -1,0 +1,41 @@
+<div class = "container">
+    <a class = "btn btn=primary" [routerLink] = "'/admin'">
+        GO TO PLAYER LIST PAGE
+    </a>
+    <div class = "form-group">
+        <label>PLAYER NAME</label>
+        <div class = "form-control">{{soccerPlayer.playerName}}</div>
+    </div>
+    <div class = "form-group">
+        <label>PLAYER AGE</label>
+        <div class = "form-control">{{soccerPlayer.playerAge}}</div>
+    </div>
+    <div class = "form-group">
+        <label>PLAYER CLUB</label>
+        <div class = "form-control">{{soccerPlayer.playerClub}}</div>
+    </div>
+    <div class = "form-group">
+        <label>PLAYER COUNTRY</label>
+        <div class = "form-control">{{soccerPlayer.playerNationality}}</div>
+    </div>
+    <div class = "form-group">
+        <label>PLAYER POSITION</label>
+        <div class = "form-control">{{soccerPlayer.playerPosition}}</div>
+    </div>
+    <div class = "form-group">
+        <label>PLAYER GOALS</label>
+        <div class = "form-control">{{soccerPlayer.playerGoals}}</div>
+    </div>
+    <div class = "form-group">
+        <label>PLAYER ASSISTS</label>
+        <div class = "form-control">{{soccerPlayer.playerAssists}}</div>
+    </div>
+    <div class = "form-group">
+        <label>PLAYER CLEAN SHEETS</label>
+        <div class = "form-control">{{soccerPlayer.playerCleanSheets}}</div>
+    </div>
+    <div class = "form-group">
+        <label>PLAYER STAR RATING</label>
+        <div class = "form-control"><app-star [rating] = "soccerPlayer.playerStarRating"></app-star></div>
+    </div>
+</div>
